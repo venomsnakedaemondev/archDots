@@ -1,0 +1,40 @@
+#! /bin/bash
+
+# Verificar si sxhkd no está en ejecución y arrancarlo si es necesario
+pgrep -x sxhkd > /dev/null || sxhkd &
+# Configurar el fondo de pantalla
+feh --bg-fill --randomize ~/wallpaper/* 
+# Arrancar picom para transparencias
+picom &
+# Habilitar NumLock
+numlockx on
+# Obtener la lista de monitores disponibles
+monitors=$(xrandr --query | grep " connected" | cut -d" " -f1)
+
+# Verificar si hay un solo monitor o más
+if [ $(echo "$monitors" | wc -l) -eq 1 ]; then
+    # Si hay un solo monitor, asignar escritorios solo a ese monitor
+    bspc monitor --remove DP-1
+    bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9 0
+    xrandr --output HDMI-A-0 --primary --mode 1280x720 --pos 0x0 --rotate normal
+elif [ $(echo "$monitors" | wc -l) -eq 2 ]; then
+    # Si hay dos monitores, asignar escritorios a ambos monitores
+    bspc monitor HDMI-A-0 -d 1 2 3 4 5
+    bspc monitor DisplayPort-0 -d 6 7 8 9 0    
+    xrandr --output HDMI-A-0 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DisplayPort-0 --mode 1366x768 --pos 1280x0 --rotate normal
+
+fi
+
+# Lanzar Polybar
+/home/vnmsnake/.config/polybar/launch.sh
+
+#################################
+# Configuraciones de BSPWM
+bspc config border_width         0.1
+bspc config window_gap           6
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+
+bspc rule -a "Minecraft* 1.20.1" desktop=^1
