@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Arch-Linux-blue?logo=arch-linux&style=flat-square" alt="Arch Linux">
+  <img src="https://img.shields.io/badge/BSPWM-Window%20Manager-green?logo=linux&style=flat-square" alt="BSPWM">
+  <img src="https://img.shields.io/badge/KITTY-Terminal-orange?logo=kitty&style=flat-square" alt="KITTY">
+  <img src="https://img.shields.io/badge/Polybar-Status%20Bar-red?logo=polybar&style=flat-square" alt="Polybar">
+  <img src="https://img.shields.io/badge/sxhkd-Hotkey%20Daemon-blue?logo=linux&style=flat-square" alt="sxhkd">
+</p>
 Dotfiles para entorno Arch Linux
 
 Este repositorio contiene mis configuraciones personalizadas (dotfiles) para varios programas en mi entorno de Arch Linux. Estas configuraciones están optimizadas para mi flujo de trabajo y preferencias personales.
