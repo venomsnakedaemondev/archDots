@@ -115,7 +115,7 @@ super + ctrl + {Left,Down,Up,Right}
 
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-	/home/vnmsnake/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+	$HOME/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 	
 
 # ---------------------------------------------
@@ -123,4 +123,4 @@ alt + super + {Left,Down,Up,Right}
 # ---------------------------------------------
 
 super + shift + b
-	firejail firefox
+	firefox
