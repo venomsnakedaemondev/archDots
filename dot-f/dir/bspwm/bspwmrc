@@ -14,8 +14,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer false
 
-# Detectar los monitores conectados
-monitores=($(xrandr --listmonitors | grep -oP '\d+:\s+\K\w+'))
+# Detectar los monitores conectados usando xrandr
+monitores=($(xrandr --listmonitors | grep -oP '\+*\w+-\w+' | uniq))
 
 # Si no hay monitores conectados, salir
 if [ ${#monitores[@]} -eq 0 ]; then
@@ -23,12 +23,17 @@ if [ ${#monitores[@]} -eq 0 ]; then
   exit 1
 fi
 
-# Asignar escritorios a los monitores detectados
+# Asignación manual de escritorios a monitores
 if [ ${#monitores[@]} -eq 1 ]; then
-  # Si hay un solo monitor, asignar todos los escritorios al primer monitor
+  # Si hay un solo monitor, asignamos escritorios 1-5 a ese monitor
   bspc monitor "${monitores[0]}" -d 1 2 3 4 5
-else
-  # Si hay más de un monitor, asignar escritorios a cada uno
+elif [ ${#monitores[@]} -eq 2 ]; then
+  # Si hay dos monitores, asignamos escritorios a cada monitor
   bspc monitor "${monitores[0]}" -d 1 2 3 4 5
   bspc monitor "${monitores[1]}" -d 6 7 8 9 0
-fi
+else
+  # Si hay más de dos monitores, asignamos escritorios a los primeros dos
+  bspc monitor "${monitores[0]}" -d 1 2 3 4 5
+  bspc monitor "${monitores[1]}" -d 6 7 8 9 0
+
+^

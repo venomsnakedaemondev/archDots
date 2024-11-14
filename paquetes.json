@@ -20,6 +20,7 @@
         "linux-lts-headers"
     ],
     "graphics_and_window_manager": [
+        "rofi",
         "arandr",
         "bspwm",
         "feh",
@@ -29,7 +30,6 @@
         "pavucontrol",
         "picom",
         "polybar",
-        "rofi",
         "sxhkd",
         "volumeicon"
     ],
