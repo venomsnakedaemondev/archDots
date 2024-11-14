@@ -1,0 +1,40 @@
+#! /bin/bash
+
+# Array de colores para bordes normales
+normal_colores=(
+    "#FCAD03"  # Color normal 1
+    "#BD93F9"  # Color normal 2
+    "#FF5733"  # Color normal 3
+    "#FFEA00"  # Color normal 4
+    "#0080FF"  # Color normal 6
+    "#FF1493"  # Color normal 7
+    "#FFD700"  # Color normal 8
+    "#8A2BE2"  # Color normal 9
+)
+
+# Array de colores para bordes activos
+active_colores=(
+    "#FC2BA3"  # Color activo 1
+    "#FF4500"  # Color activo 2
+    "#00BFFF"  # Color activo 3
+    "#32CD32"  # Color activo 4
+    "#FFD700"  # Color activo 5
+    "#FF69B4"  # Color activo 6
+    "#8B008B"  # Color activo 7
+    "#FF8C00"  # Color activo 8
+    "#ADFF2F"  # Color activo 9
+)
+
+# Array de colores para bordes enfocados
+focused_colores=(
+    "#00FF00"  # Color enfocado 1
+)
+
+while true; do
+    for i in "${!normal_colores[@]}"; do
+        bspc config normal_border_color "${normal_colores[$i]}"
+        bspc config active_border_color "${active_colores[$i]}"
+        bspc config focused_border_color "${focused_colores[$i]}"
+        sleep 300 # Cambia el tiempo a tu preferencia
+    done
+done

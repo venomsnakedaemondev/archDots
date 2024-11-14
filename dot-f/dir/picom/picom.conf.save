@@ -1,0 +1,89 @@
+corner-radius = 20;
+rounded-corners-exclude = [
+  "class_g ?= 'rofi'",
+  "window_type *= 'dock'",
+  "window_type = 'menu'",
+  "window_type = 'tooltip'",
+  # "window_type = 'popup_menu'",
+  "window_type = 'dropdown_menu'"
+];
+
+
+shadow = true;
+shadow-radius = 10;
+shadow-opacity = 0.4;
+shadow-offset-x = -10;
+shadow-offset-y = -10;
+shadow-color = "#D61010";
+crop-shadow-to-monitor = true;
+shadow-ignore-shaped = false;
+shadow-exclude = [
+  "class_g = 'slop'",
+  "class_g ?= 'peek'",
+  "window_type = 'utility'",
+  "window_type = 'dropdown_menu'",
+];
+
+fading = true;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+fade-delta = 5;
+w
+no-fading-openclose = false
+no-fading-destroyed-argb = true
+
+fade-exclude = [
+  "class_g = 'slop'"   # maim
+]
+
+
+
+active-opacity = 0.90;
+inactive-opacity = 0.60;
+frame-opacity = 1.0;
+inactive-dim = 0.0;
+
+opacity-rule = [];
+
+focus-exclude = [
+  "class_g ?= 'slop'",
+  "name = 'rofi'",
+  "class_g ?= 'Steam'",
+  "window_type *= 'menu'",
+  "window_type = 'utility'",
+  "window_type = 'dropdown_menu'",
+  "window_type = 'popup_menu'"
+];
+blur: {
+	method = "dual_kawase";
+  strength = 10;
+  background = true;
+  background-frame = true;
+  background-fixed = true;
+}
+blur-background-exclude = [
+  "window_type != 'splash'"
+];
+backend = "glx";
+glx-no-stencil = false;
+glx-copy-from-front = false;
+use-damage = false;
+vsync = false;
+detect-rounded-corners = true;
+detect-client-leader = true;
+detect-transient = true;
+unredir-if-possible = true;
+
+wintypes:
+{
+  tooltip = { fade = true; full-shadow = true; focus = true; blur-background = false;};
+  menu = { full-shadow = true;};
+  popup_menu =  { full-shadow = true;};
+  utility =  {full-shadow = true;};
+  toolbar = {full-shadow = true;};
+  normal = {full-shadow = true;};
+  notification = {full-shadow = true;};
+  dialog = {full-shadow = true};
+  dock = {full-shadow = true;};
+  dropdown_menu = { full-shadow = true;};
+};

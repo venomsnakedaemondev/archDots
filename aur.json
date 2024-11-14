@@ -1,0 +1,28 @@
+{
+    "instalacion_aur": [
+        "p7zip-gui",
+        "scrub",
+        "otf-material-design-icons",
+        "ttf-material-design-icons-desktop-git",
+        "ttf-material-design-iconic-font",
+        "otf-material-design-icons",
+        "ttf-font-awesome",
+        "freetube",
+        "powerline-fonts",
+        "ttf-weather-icons",
+        "ttf-devicons",
+        "vscode-codicons-git",
+        "ttf-font-logos",
+        "ttf-pomicons",
+        "ttf-meslo-nerd-font-powerlevel10k",
+        "ttf-meslo-nerd",
+        "adobe-source-code-pro-fonts",
+        "catppuccin-cursors-latte",
+        "catppuccin-cursors-frappe",
+        "catppuccin-cursors-macchiato",
+        "catppuccin-cursors-mocha",
+        "visual-studio-code-bin",
+        "brave-bin",
+        "github-desktop-git"
+    ]
+}
